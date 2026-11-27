@@ -20,10 +20,20 @@ Clase: Utensilio
 */
 package Lógica;
 
-public class Utensilio extends Necesario {
+import java.io.Serializable;
+
+public class Utensilio extends Necesario implements Serializable{
+    private static final long serialVersionUID = 1L;
     
-    public Utensilio(String nombre, Boolean disponibilidad) {
+    public Utensilio(String nombre, boolean disponibilidad) {
         super(nombre, disponibilidad);
     }
-    
+     public Utensilio(String nombre) {
+        super(nombre, true);
+    }
+     @Override
+    public String toString()
+    {
+        return "Utensilio:  " + getNombre();
+    }
 }

@@ -27,17 +27,18 @@ public class Cantidades implements Serializable {
     
     //Atributos.
     private static final long serialVersionUID = 1L;
-    private Double cantidad;
+    private String cantidad;
     private Ingrediente ingrediente;
     
     //Contructor.
-    public Cantidades(Double cantidad, Ingrediente ingrediente) 
+    public Cantidades(String cantidad, Ingrediente ingrediente) 
     {
-        //FALTA IMPLEMENTAR
-        //EXCEPCIONES
+        //DEBE VÁLIDAR QUE INGREDIENTE Y CANTIDAD NO SEAN NULOS.
+        this.cantidad = cantidad;
+        this.ingrediente = ingrediente; 
     }
     //Getters
-    public Double getCantidad()
+    public String getCantidad()
     {
         return cantidad;
     }
@@ -46,12 +47,14 @@ public class Cantidades implements Serializable {
         return ingrediente;
     }
     //Setters
-    public void setCantidad(Double cantidad)
+    public void setCantidad(String cantidad)
     {
+        //CANTIDAD NO PUEDE SER NULL
         this.cantidad = cantidad;
     }
     public void setIngrediente(Ingrediente ingrediente)
     {
+        //INGREDIENTE NO PUEDE SER NULL
         this.ingrediente = ingrediente;
     }
     

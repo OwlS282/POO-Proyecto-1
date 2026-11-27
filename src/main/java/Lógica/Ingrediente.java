@@ -20,10 +20,22 @@ Clase: Ingrediente
 */
 package Lógica;
 
-public class Ingrediente extends Necesario {
+import java.io.Serializable;
+
+public class Ingrediente extends Necesario implements Serializable{
+    private static final long serialVersionUID = 1L;
     
-    public Ingrediente(String nombre, Boolean disponibilidad) {
+    public Ingrediente(String nombre, boolean disponibilidad) {
         super(nombre, disponibilidad);
     }
+    public Ingrediente(String nombre) {
+        super(nombre, true);
+    }
+    @Override
+    public String toString()
+    {
+        return "Ingrediente:  " + getNombre();
+    }
+    
     
 }

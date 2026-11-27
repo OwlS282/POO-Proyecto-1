@@ -22,5 +22,17 @@ package Lógica;
 
 public enum Dificultad 
 {
-    FÁCIL, MEDIO, DÍFICIL, EXPERTO;
+    FACIL, MEDIO, DIFICIL, EXPERTO;
+    
+    @Override    
+public String toString()
+{
+        return switch (this) {
+            case FACIL -> "Fácil";
+            case MEDIO -> "Medio";
+            case DIFICIL -> "Difícil";
+            case EXPERTO -> "Experto";
+        };	
+}
+
 }
