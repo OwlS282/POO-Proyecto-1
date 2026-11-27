@@ -34,7 +34,7 @@ public class Ingrediente extends Necesario implements Serializable{
     @Override
     public String toString()
     {
-        return "Ingrediente:  " + getNombre();
+        return getNombre();
     }
     
     

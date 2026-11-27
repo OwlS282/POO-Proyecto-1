@@ -34,6 +34,6 @@ public class Utensilio extends Necesario implements Serializable{
      @Override
     public String toString()
     {
-        return "Utensilio:  " + getNombre();
+        return getNombre();
     }
 }
