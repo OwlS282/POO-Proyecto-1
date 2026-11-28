@@ -87,23 +87,6 @@ public class Recetario implements Serializable
         file.close();
     }
     
-    //Getters
-    public Set<Ingrediente> getAlacena()
-    {
-        return alacena;
-    }
-    public Set<Utensilio> getInstrumentos()
-    {
-        return instrumentos;
-    }
-    public List<Receta> getRecetas()
-    {
-        return recetas;
-    }
-    public Set<String> getEtiquetas()
-    {
-        return etiquetas;
-    }
     
     //Setters
     public void setAlacena(Set<Ingrediente> alacena)
@@ -140,7 +123,7 @@ public class Recetario implements Serializable
     
     
     //Filtrados 
-    public List<Receta> filtradoDuracion(Double criterio)
+    public List<Receta> filtradoDuracion(String criterio)
     {
         List<Receta> filtrado = new LinkedList<>();
         
@@ -164,10 +147,9 @@ public class Recetario implements Serializable
     
     
     //Métodos relacionados con Ingredientes
-    public void verAlacena()
+    public Set<Ingrediente> verAlacena()
     {
-        for (Ingrediente i : alacena)
-            i.toString();
+        return alacena;
     }
     public void agregarIngrediente(String nombre, Boolean disponibilidad)
     {
@@ -187,10 +169,9 @@ public class Recetario implements Serializable
     
     
     //Métodos relacionados con Utensilios
-    public void verInstrumento()
+    public Set<Utensilio> verInstrumento()
     {
-        for (Utensilio u : instrumentos)
-            u.toString();
+        return instrumentos;
     }
     public void agregarInstrumento(String nombre, Boolean disponibilidad)
     {
@@ -209,10 +190,9 @@ public class Recetario implements Serializable
     
     
     //Métodos relacionados con Recetas
-    public void verRecetas()
+    public List<Receta> verRecetas()
     {
-        for (Receta r : recetas)
-            System.out.println(r.getNombre());
+        return recetas;
     }
     public void verReceta()
     {
@@ -224,18 +204,13 @@ public class Recetario implements Serializable
         Receta r = new Receta(nombre, porciones, descripcion, duracion, dificultad);
         recetas.add(r);
     }
-    public void editarReceta(Receta receta, String nombre, Integer porciones, String descripción, String etiqueta, 
-String foto, Double duracion, Ingrediente ingrediente, String cantidad, Dificultad dificultad, Utensilio utensilio)  
+    public void editarReceta(Receta receta, String nombre, Integer porciones, String descripción, Double duracion,  Dificultad dificultad)  
     {
         receta.setDescripcion(descripción);
         receta.setNombre(nombre);
         receta.setDificultad(dificultad);
         receta.setPorciones(porciones);
         receta.setDuracion(duracion);
-        receta.agregarEtiqueta(etiqueta);
-        receta.agregarFoto(foto);
-        receta.agregarUtensilio(utensilio);
-        receta.agregarIngrediente(ingrediente, cantidad);
     }
     public void eliminarReceta(Receta receta)
    {
@@ -244,6 +219,10 @@ String foto, Double duracion, Ingrediente ingrediente, String cantidad, Dificult
     
     
      //Métodos relacionados con Etiqueta
+       public Set<String> verEtiquetas()
+    {
+        return etiquetas;
+    }
     public void agregarEtiqueta(String etiqueta)
     {
         etiquetas.add(etiqueta);
